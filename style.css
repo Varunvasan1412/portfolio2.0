@@ -2,104 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
   --font1: "Poppins", sans-serif;
   --headfont: "Nunito Sans", sans-serif;
+  --beige: rgb(225, 225, 219);
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
-  background-color: rgb(225, 225, 219);
+  background: var(--beige);
 }
 
-main {
+#nav {
+  height: 140px;
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
 }
 
-.bubble1 {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: rgba(184, 184, 169, 0.6);
-  position: absolute;
-  top: 70px;
-  left: 60px;
+#nav svg {
+  height: 90px;
+  width: auto;
+  margin-left: 40px;
 }
 
-.bubble2 {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background-color: rgb(209, 209, 199);
-  position: absolute;
-  top: 95px;
-  left: 50px;
-}
-
-.tabs {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-  margin-right: 3em;
-}
-
-a {
-  color: #393632;
-  text-decoration: none;
-  margin: 5px 15px 0 0;
-  font-size: 1.1em;
+#nav #tabs {
+  margin-right: 50px;
+  font-size: 17px;
   font-family: var(--font1);
-  font-weight: 600;
 }
 
-.hero {
-  font-family: var(--headfont);
-  width: 100%;
-  font-size: 3.3em;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  -webkit-text-stroke: 5px;
-  margin-top: 50px;
-  text-align: center;
-  line-height: 2.5em;
-}
-
-.hi {
-  margin-right: 4em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.name {
-  margin-left: 2.1em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.hero-caption {
-  text-align: center;
-  font-family: var(--font1);
-  font-size: 20px;
+#tabs h4 {
   font-weight: 500;
+  -webkit-text-stroke: 0.2px;
+  margin-bottom: 5px;
+}
+
+h4 a {
+  color: #000;
+}
+
+#main {
+  position: relative;
+}
+
+#page1 {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+#page1 h1 {
+  font-size: 100px;
+  font-family: var(--headfont);
+  -webkit-text-stroke: 5px;
+  letter-spacing: 5px;
+  position: relative;
+}
+
+#page1 p {
+  font-size: 20px;
+  font-family: var(--font1);
   margin-top: 20px;
-  transform: translateY(80px);
-  transition: transform 1s;
+  word-wrap: wrap;
+  width: 40%;
+  text-align: center;
 }
 
-.hero-caption .place {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+#page2 {
+  height: 100vh;
+  width: 100%;
 }
 
-.hero-caption .work {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
+@media only screen and (max-width: 480px) {
+  #nav svg {
+    height: 60px;
+  }
 
-.char {
-  transform: translateY(115px);
-  transition: transform 0.5s;
+  #nav #tabs {
+    font-size: 10px;
+  }
+  #page1 h1 {
+    font: 100;
+    font-size: small;
+    letter-spacing: 3px;
+    font-family: var(--font1);
+  }
+
+  #page1 p {
+    font-size: 10px;
+  }
 }
