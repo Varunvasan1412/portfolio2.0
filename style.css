@@ -73,12 +73,25 @@ h4 a {
   position: relative;
 }
 
+.greet {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.name {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
+}
+
 #page1 p {
   font-size: 20px;
   font-family: var(--font1);
   margin-top: 20px;
   word-wrap: wrap;
-  width: 40%;
+  width: 30%;
   text-align: center;
 }
 
