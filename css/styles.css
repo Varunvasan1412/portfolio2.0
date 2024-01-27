@@ -16,6 +16,8 @@ body {
   --beige: rgb(225, 225, 219);
   --text-color1: #3d3a36;
   --text-color2: #7b756e;
+  --text-color3: #d1d0c6;
+  --text-color4: #9c9c93;
 }
 
 @font-face {
@@ -113,11 +115,11 @@ body {
 }
 
 .overlay-name {
-  color: var(--beige);
+  color: var(--text-color3);
 }
 
 .overlay-year {
-  color: var(--text-color2);
+  color: var(--text-color4);
 }
 
 .navbar {
@@ -152,10 +154,42 @@ ul {
 }
 
 .page-2 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: black;
   border-radius: 30px;
+}
+
+.about-title {
+  color: var(--text-color3);
+  font-family: "cabinet-grotesk", Arial;
+  font-size: 6rem;
+  padding: 4rem;
+  letter-spacing: 0.4px;
+}
+
+.my-photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-photo img {
+  height: 40em;
+  width: auto;
+  z-index: 9;
+  border-radius: 20px;
+  position: relative;
+  bottom: 80px;
+  object-fit: cover;
+  filter: brightness(90%);
+  opacity: 0.9;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+.my-photo img:hover {
+  height: 42em;
+  width: auto;
 }
 
 .cursor {
@@ -179,7 +213,7 @@ ul {
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
-  top: 100px;
+  bottom: 70px;
 }
 
 #scroll {
