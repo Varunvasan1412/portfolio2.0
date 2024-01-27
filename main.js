@@ -22,10 +22,20 @@ TweenMax.staggerTo(
   0.04
 );
 
-TweenMax.to(".overlay", 1.2, {
-  top: "-100%",
-  ease: Expo.easeOut,
-  delay: 2.5,
+document.addEventListener("DOMContentLoaded", function () {
+  TweenMax.to(".overlay", 1.4, {
+    top: 0, // Slide the overlay in
+    ease: Expo.easeOut,
+    onComplete: function () {
+      setTimeout(function () {
+        // Pause for 1 second before sliding out
+        TweenMax.to(".overlay", 2.5, {
+          top: "-100%",
+          ease: Expo.easeOut,
+        });
+      }, 1000); // Adjust the delay time as needed
+    },
+  });
 });
 
 var textWrapper1 = document.querySelector(".name");

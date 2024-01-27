@@ -18,61 +18,55 @@ body {
   --text-color: #393632;
 }
 
+.page-1 {
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 250px;
+}
+
+.main-content h1 {
+  font-size: 5.75em;
+  font-family: var(--headfont);
+  -webkit-text-stroke: 4px;
+  letter-spacing: 3px;
+}
+
+.main-content .greet {
+  color: var(--text-color);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.main-content .name {
+  color: var(--text-color);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.name .letter {
+  display: inline-block;
+  line-height: 1em;
+  margin-top: 10px;
+}
+
+.greet .letter {
+  display: inline-block;
+  line-height: 1em;
+  margin-top: -30px;
+}
+
 .logo svg {
   position: absolute;
   height: 100px;
   width: auto;
   top: 30px;
   left: 30px;
-}
-
-.greet {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 70px;
-  font-family: var(--headfont);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  -webkit-text-stroke: 3px;
-  color: var(--text-color);
-}
-
-.greet .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-
-.name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 70px;
-  font-family: var(--headfont);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  -webkit-text-stroke: 3px;
-  color: var(--text-color);
-}
-
-.name .letter {
-  display: inline-block;
-  line-height: 1em;
-  margin-top: 30px;
-}
-
-.page-1 p {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  max-width: 32%;
-  text-align: center;
-  font-weight: 500;
-  font-family: var(--font1);
-  margin-top: 20px;
-  color: var(--text-color);
 }
 
 .overlay {
@@ -82,12 +76,20 @@ body {
   background-color: #0f0f0f;
 }
 
+.overlay-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100%;
+}
+
 .overlay-text h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  font-family: var(--headfont);
+  -webkit-text-stroke: 2px;
+  padding-top: 14px;
+  letter-spacing: 2px;
 }
 
 .navbar {
@@ -100,4 +102,28 @@ body {
   color: #fff;
   font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+}
+
+.page-2 {
+  height: 110vh;
+  width: 100%;
+  background-color: black;
+}
+
+.page-3 {
+  height: 110vh;
+  width: 100%;
+  background-color: pink;
+}
+
+.page-4 {
+  height: 110vh;
+  width: 100%;
+  background-color: orange;
+}
+
+.page-5 {
+  height: 110vh;
+  width: 100%;
+  background-color: red;
 }
