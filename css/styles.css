@@ -15,7 +15,8 @@ body {
   --font1: "Poppins", sans-serif;
   --headfont: "Nunito Sans", sans-serif;
   --beige: rgb(225, 225, 219);
-  --text-color: #393632;
+  --text-color1: #3d3a36;
+  --text-color2: #7b756e;
 }
 
 .page-1 {
@@ -40,12 +41,12 @@ body {
 }
 
 .main-content .greet {
-  color: var(--text-color);
+  color: var(--text-color1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .main-content .name {
-  color: var(--text-color);
+  color: var(--text-color1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -59,6 +60,17 @@ body {
   display: inline-block;
   line-height: 1em;
   margin-top: -30px;
+}
+
+.hero-about {
+  padding-top: 32px;
+  font-size: 22px;
+  font-family: var(--font1);
+  color: var(--text-color2);
+  width: 35%;
+  text-align: center;
+  -webkit-text-stroke: 0.3px;
+  letter-spacing: 0.3px;
 }
 
 .logo svg {
@@ -81,7 +93,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
   height: 100%;
 }
 
@@ -90,6 +101,14 @@ body {
   -webkit-text-stroke: 2px;
   padding-top: 14px;
   letter-spacing: 2px;
+}
+
+.overlay-name {
+  color: var(--beige);
+}
+
+.overlay-year {
+  color: var(--text-color2);
 }
 
 .navbar {
@@ -102,6 +121,25 @@ body {
   color: #fff;
   font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+}
+
+.nav {
+  position: absolute;
+  top: 35px;
+  right: 42px;
+}
+
+ul {
+  list-style: none;
+}
+
+.tabs > li {
+  margin-bottom: 2px;
+  font-size: 18px;
+  font-family: var(--font1);
+  color: var(--text-color);
+  -webkit-text-stroke: 0.3px;
+  letter-spacing: 0.3px;
 }
 
 .page-2 {

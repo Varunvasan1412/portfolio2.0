@@ -10,16 +10,24 @@ TweenMax.staggerFrom(
   0.08
 );
 
-TweenMax.staggerTo(
-  ".navbar > div",
-  0.8,
+TweenMax.staggerFrom("ul > li", 1, {
+  y: "-50",
+  opacity: 0,
+  ease: Power3.easeOut,
+  delay: 2.5,
+  stagger: 0.25,
+});
+
+TweenMax.staggerFrom(
+  ".logo > svg",
+  1,
   {
-    x: "80",
+    y: "-50",
     opacity: 0,
     ease: Power3.easeOut,
-    delay: 4,
+    delay: 10,
   },
-  0.04
+  0.08
 );
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -48,13 +56,13 @@ textWrapper2.innerHTML = textWrapper2.textContent.replace(
   /\S/g,
   "<span class='letter'>$&</span>"
 );
-
 anime.timeline().add({
   targets: ".name .letter",
   translateY: [100, 0],
   translateZ: 0,
   easing: "easeOutExpo",
   duration: 2000,
+  stagger: 5,
   delay: (el, i) => 2600 + 40 * i,
 });
 anime.timeline().add({
@@ -63,5 +71,6 @@ anime.timeline().add({
   translateZ: 0,
   easing: "easeOutExpo",
   duration: 2000,
+  stagger: 5,
   delay: (el, i) => 2600 + 40 * i,
 });
