@@ -7,7 +7,7 @@
 html,
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #e7e7e1;
 }
 
@@ -17,6 +17,11 @@ body {
   --beige: rgb(225, 225, 219);
   --text-color1: #3d3a36;
   --text-color2: #7b756e;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/css/fonts/gilroy/Gilroy-Medium.ttf") format("ttf");
 }
 
 .page-1 {
@@ -99,8 +104,9 @@ body {
 .overlay-text h1 {
   font-family: var(--headfont);
   -webkit-text-stroke: 2px;
-  padding-top: 14px;
+  padding-top: 5px;
   letter-spacing: 2px;
+  font-size: 2.5em;
 }
 
 .overlay-name {
@@ -143,25 +149,65 @@ ul {
 }
 
 .page-2 {
-  height: 110vh;
+  height: 100vh;
   width: 100%;
   background-color: black;
 }
 
-.page-3 {
-  height: 110vh;
-  width: 100%;
-  background-color: pink;
+.cursor {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--text-color2);
+  position: fixed;
+}
+.cursor-blur {
+  height: 460px;
+  width: 460px;
+  border-radius: 50%;
+  background-color: rgba(245, 245, 220, 0.2);
+  position: fixed;
+  filter: blur(30px);
 }
 
-.page-4 {
-  height: 110vh;
-  width: 100%;
-  background-color: orange;
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
 }
 
-.page-5 {
-  height: 110vh;
-  width: 100%;
-  background-color: red;
+#scroll {
+  display: inline-block;
+  color: white;
+  white-space: nowrap;
+  animation: scrolling 30s linear infinite;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 900;
+  font-family: "gilroy", sans-serif;
+  margin-right: 30px;
+  transform: all linear 4s;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text-color1);
+}
+
+#scroller h4:hover {
+  color: beige;
+}
+
+@keyframes scrolling {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
