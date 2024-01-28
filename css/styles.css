@@ -60,16 +60,9 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-.name .letter {
-  display: inline-block;
-  line-height: 1em;
-  margin-top: 10px;
-}
-
-.greet .letter {
-  display: inline-block;
-  line-height: 1em;
-  margin-top: -30px;
+.char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
 }
 
 .hero-about {
@@ -81,6 +74,12 @@ body {
   text-align: center;
   -webkit-text-stroke: 1px;
   letter-spacing: 0.3px;
+  overflow: hidden;
+}
+
+.hero p span {
+  display: inline-block;
+  transform: translateY(100%);
 }
 
 .logo svg {
@@ -89,11 +88,17 @@ body {
   width: auto;
   top: 30px;
   left: 30px;
+  overflow: hidden;
+}
+
+.logo-svg {
+  display: inline-block;
+  transform: translateY(100%);
 }
 
 .overlay {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #0f0f0f;
 }
@@ -112,6 +117,12 @@ body {
   padding-top: 5px;
   letter-spacing: 3.2px;
   font-size: 2.8em;
+  overflow: hidden;
+}
+
+.overlay-text h1 span {
+  display: inline-block;
+  transform: translateY(100%);
 }
 
 .overlay-name {
@@ -120,18 +131,6 @@ body {
 
 .overlay-year {
   color: var(--text-color4);
-}
-
-.navbar {
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-around;
-  color: #fff;
-  font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
 }
 
 .nav {
@@ -166,6 +165,12 @@ ul {
   font-size: 6rem;
   padding: 4rem;
   letter-spacing: 0.4px;
+  overflow: hidden;
+}
+
+.about-title span {
+  display: inline-block;
+  transform: translateY(100%);
 }
 
 .my-photo {
@@ -173,6 +178,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .my-photo img {
   height: 40em;
@@ -185,6 +191,25 @@ ul {
   filter: brightness(90%);
   opacity: 0.9;
   transition: height 0.3s ease, width 0.3s ease;
+}
+
+.my-photo::after {
+  content: url("data:image/svg+xml,%3Csvg width='255' height='365' viewBox='0 0 219 385' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-6.4373e-06 369.875C-6.4373e-06 378.548 8.00209 385.645 17.8081 384.953C130.621 376.993 219 294.05 219 192.5C219 90.9503 130.621 8.0066 17.8081 0.0467827C8.00209 -0.646144 -6.4373e-06 6.45197 -6.4373e-06 15.1243L-6.4373e-06 369.875Z' fill='%23191817'/%3E%3Cpath d='M1.66893e-05 327.489C1.66893e-05 334.09 6.36313 339.491 14.1607 338.964C103.867 332.907 174.145 269.784 174.145 192.5C174.145 115.216 103.867 52.0934 14.1607 46.0356C6.36313 45.5083 1.66893e-05 50.9102 1.66893e-05 57.5102L1.66893e-05 327.489Z' fill='%232F2F2B'/%3E%3C/svg%3E");
+  position: absolute;
+  top: 54px;
+  right: 530px;
+  width: 100px;
+  height: auto;
+  z-index: 8;
+}
+
+.my-photo::before {
+  content: url("data:image/svg+xml,%3Csvg width='249' height='385' viewBox='0 0 249 385' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M219 15.1248C219 6.45192 210.998 -0.645253 201.192 0.0466565C88.3789 8.00674 0 90.9502 0 192.5C0 294.05 88.3789 376.993 201.192 384.953C210.998 385.646 219 378.548 219 369.876V15.1248Z' fill='%23191817'/%3E%3Cpath d='M219 57.5106C219 50.9101 212.637 45.5089 204.839 46.0355C115.133 52.0935 44.8554 115.216 44.8554 192.5C44.8554 269.784 115.133 332.907 204.839 338.964C212.637 339.492 219 334.09 219 327.49V57.5106Z' fill='%232F2F2B'/%3E%3C/svg%3E");
+  position: absolute;
+  top: 60px;
+  left: 400px;
+  width: 100px;
+  height: auto;
 }
 
 .my-photo img:hover {
@@ -203,7 +228,7 @@ ul {
   height: 460px;
   width: 460px;
   border-radius: 50%;
-  background-color: rgba(245, 245, 220, 0.2);
+  background-color: rgba(245, 245, 220, 0.3);
   position: fixed;
   filter: blur(30px);
 }
