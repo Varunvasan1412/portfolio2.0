@@ -75,3 +75,5 @@ gsap.to(".name .char", {
   delay: 2.3,
   duration: 0.2,
 });
+
+/* scroll-about animation */

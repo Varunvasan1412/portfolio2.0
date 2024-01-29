@@ -168,10 +168,10 @@ ul {
   overflow: hidden;
 }
 
-.about-title span {
+/* .about-title span {
   display: inline-block;
   transform: translateY(100%);
-}
+} */
 
 .my-photo {
   width: 100%;
@@ -188,7 +188,7 @@ ul {
   position: relative;
   bottom: 80px;
   object-fit: cover;
-  filter: brightness(90%);
+  filter: brightness(10%);
   opacity: 0.9;
   transition: height 0.3s ease, width 0.3s ease;
 }
@@ -213,8 +213,9 @@ ul {
 }
 
 .my-photo img:hover {
-  height: 42em;
+  height: 41.5em;
   width: auto;
+  filter: brightness(90%);
 }
 
 .cursor {
@@ -233,17 +234,47 @@ ul {
   filter: blur(30px);
 }
 
+#about-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-section p {
+  width: 50%;
+  color: #9c9c931f;
+  font-size: 1.8em;
+  font-family: var(--font1);
+  margin: 0 6em;
+  -webkit-text-stroke: 1.2px;
+  z-index: 99;
+  position: absolute;
+  bottom: 1px;
+  left: 20em;
+  overflow: hidden;
+  text-indent: 30px;
+  line-height: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+#about-section p:hover {
+  color: var(--text-color3);
+}
+
 #scroller {
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
   bottom: 70px;
+  margin-top: 3em;
+  letter-spacing: 3px;
 }
 
 #scroll {
   display: inline-block;
-  color: white;
   white-space: nowrap;
   animation: scrolling 30s linear infinite;
 }
