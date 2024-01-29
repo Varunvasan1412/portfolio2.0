@@ -1,4 +1,4 @@
-//main page nav tabs animation
+// main page nav tabs animation
 
 TweenMax.staggerFrom("ul", 1, {
   y: "-50",
@@ -75,5 +75,20 @@ gsap.to(".name .char", {
   delay: 2.3,
   duration: 0.2,
 });
+
+// lenis for smooth scrolling
+
+const lenis = new lenis();
+
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 
 /* scroll-about animation */
