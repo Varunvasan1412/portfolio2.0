@@ -1,3 +1,19 @@
+gsap.registerPlugin(ScrollTrigger);
+
+// lenis for smooth scrolling
+const lenis = new Lenis();
+
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // main page nav tabs animation
 
 TweenMax.staggerFrom("ul", 1, {
@@ -42,11 +58,6 @@ tl.fromTo(
 //hero about animations
 tl.to(".p-hide", { y: "0%", duration: 0.3, stagger: 0.15 });
 
-/////////////////////////////////// TOOO //////////////////////////////////////
-// 1. SCROLL-ANIMATION FOR ABOUT TITLE
-//1. tl.to(".about-title-hide", { y: "0%", duration: 0.6, stagger: 0.15 });
-//////////////////////////////////////////////////////////////////////////////
-
 //mouse pointer animations
 var cursor = document.querySelector(".cursor");
 var cursorBlur = document.querySelector(".cursor-blur");
@@ -76,19 +87,15 @@ gsap.to(".name .char", {
   duration: 0.2,
 });
 
-// lenis for smooth scrolling
-
-const lenis = new lenis();
-
-lenis.on("scroll", (e) => {
-  console.log(e);
+// warning animation
+document.body.style.overflowX = "hidden";
+gsap.from(".warn", {
+  x: "100vw",
+  duration: 1.5,
+  delay: 2.5,
+  ease: "power2.out",
+  onComplete: function () {
+    // Remove overflow-x: hidden; from the body after the animation completes
+    document.body.style.overflowX = "";
+  },
 });
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-/* scroll-about animation */
