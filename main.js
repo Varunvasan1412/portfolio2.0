@@ -1,19 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// lenis for smooth scrolling
-const lenis = new Lenis();
-
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
 // main page nav tabs animation
 
 TweenMax.staggerFrom("ul", 1, {
@@ -45,10 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var tl = gsap.timeline({ defaults: { ease: "SlowMo.easeOut" } });
 
-tl.to(".overlay-content", { y: "0%", duration: 0.8, stagger: 0.15 });
+tl.to(".overlay-content", {
+  y: "0%",
+  duration: 0.8,
+  stagger: 0.15,
+});
 
 //logo animations
-tl.to(".overlay-content", { y: "0%", duration: 1.2, stagger: 0.5 });
+
+tl.to(".overlay-content", {
+  y: "0%",
+  duration: 1.2,
+  stagger: 0.5,
+  opacity: 0.3,
+});
+
 tl.fromTo(
   ".logo svg",
   { y: "-150%" },
@@ -57,17 +52,6 @@ tl.fromTo(
 
 //hero about animations
 tl.to(".p-hide", { y: "0%", duration: 0.3, stagger: 0.15 });
-
-//mouse pointer animations
-var cursor = document.querySelector(".cursor");
-var cursorBlur = document.querySelector(".cursor-blur");
-
-document.addEventListener("mousemove", function (dets) {
-  cursor.style.left = dets.x + "px";
-  cursor.style.top = dets.y + "px";
-  cursorBlur.style.left = dets.x - 250 + "px";
-  cursorBlur.style.top = dets.y - 250 + "px";
-});
 
 // hero animations
 const myText = new SplitType(".greet");
@@ -99,3 +83,19 @@ gsap.from(".warn", {
     document.body.style.overflowX = "";
   },
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+// lenis for smooth scrolling
+const lenis = new Lenis();
+
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
